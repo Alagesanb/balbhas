@@ -1,0 +1,28 @@
+<mat-card  class="login-card">
+    <mat-card-header>
+        <mat-card-title>Task</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="bankForm" (submit)="createbank(bankForm.value)" class="example-form">
+    <mat-card-content>
+        <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+          <mat-form-field fxFlex appearance="fill">
+          <input  matInput  placeholder="Account Holder" formControlName="account_holder"  required>
+          </mat-form-field>  
+          <mat-form-field fxFlex appearance="fill">
+            <input  matInput  placeholder="Account Type" formControlName="accounttype"  required>
+          </mat-form-field> 
+          <mat-form-field fxFlex appearance="fill">
+            <input  matInput  placeholder="Father" formControlName="fathers_name"  required>
+          </mat-form-field> 
+        </div>
+        
+    </mat-card-content>
+    
+    <mat-card-actions>
+        <button  mat-raised-button   color="primary" >Submit</button>
+        <button  mat-raised-button   color="info" type="reset" (click)="onReset()">Cancel</button>
+    </mat-card-actions>
+    
+    </form>
+    
+</mat-card>
