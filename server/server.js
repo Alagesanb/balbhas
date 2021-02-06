@@ -41,7 +41,7 @@ app.post("/api/addAccount",function(req,res){
 }  
 else   
 {  
-  mod.findByIdAndUpdate(req.body.id, { account_holder: req.body.account_holder, accounttype: req.body.accounttype,fathers_name: req.body.fathers_name},  
+  mod.findByIdAndUpdate(req.body.id, { account_holder: req.body.account_holder, accounttype: req.body.accounttype,fathers_name: req.body.fathers_name,age: req.body.age,dob: req.body.dob,address:req.body.address},  
    function(err,data) {  
    if (err) {  
    res.send(err);         

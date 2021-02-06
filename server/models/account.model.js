@@ -12,7 +12,19 @@ var AccountSchema = new Schema({
   fathers_name: {
     type: String,
     required: true
-  }});
+  },
+age: {
+  type: Number,
+  required: true
+},
+dob: {
+  type: Date,
+  required: true
+},
+address: {
+  type: String,
+  required: true
+}});
 module.exports = mongoose.model('accounts', AccountSchema);
 
 

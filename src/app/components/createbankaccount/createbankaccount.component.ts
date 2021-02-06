@@ -21,6 +21,9 @@ export class CreatebankaccountComponent implements OnInit {
       account_holder: [null, Validators.required],
       accounttype: [''],
       fathers_name: [''],
+      dob:[''],
+      age:[''],
+      address:['']
     });
 
   }

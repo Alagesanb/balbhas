@@ -1,6 +1,6 @@
 <mat-card  class="login-card">
     <mat-card-header>
-        <mat-card-title>Task</mat-card-title>
+        <mat-card-title>Create Account</mat-card-title>
     </mat-card-header>
     <form [formGroup]="bankForm" (submit)="createbank(bankForm.value)" class="example-form">
     <mat-card-content>
@@ -14,12 +14,21 @@
           <mat-form-field fxFlex appearance="fill">
             <input  matInput  placeholder="Father" formControlName="fathers_name"  required>
           </mat-form-field> 
+          <mat-form-field fxFlex appearance="fill">
+            <input  matInput  placeholder="DOB"   formControlName="dob" required>
+          </mat-form-field>
+          <mat-form-field fxFlex appearance="fill">
+            <input  matInput  placeholder="Age"   formControlName="age" required>
+          </mat-form-field>
+          <mat-form-field fxFlex appearance="fill">
+            <input  matInput  placeholder="Address"  formControlName="address"  required>
+          </mat-form-field> 
         </div>
         
     </mat-card-content>
     
     <mat-card-actions>
-        <button  mat-raised-button   color="primary" >Submit</button>
+        <button  mat-raised-button   color="primary" >Create Account</button>
         <button  mat-raised-button   color="info" type="reset" (click)="onReset()">Cancel</button>
     </mat-card-actions>
     
