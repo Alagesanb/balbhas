@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError as observableThrowError} from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
@@ -21,6 +21,7 @@ export class BankService {
   AddAccount(Account){      
     console.log(Account);
     return this.http.post('http://localhost:8080/api/addAccount/', Account)    
+    // .pipe(map(resp => resp.json()))
     .pipe(
       catchError(this.errorMgmt)
     )                      
@@ -28,9 +29,13 @@ export class BankService {
 
   GetAccount(){       
     return this.http.get('http://localhost:8080/api/getAccount/') 
-    .pipe(
-      catchError(this.errorMgmt)
-    ) 
+    // catchError((err: Response) => {
+    //   let obj = err.json();
+    //  let  status = err.status;
+    //   this.Log.Error(status.Error);
+    //   return observableThrowError(obj);
+    // })
+    // map(res => res.json()),
                         
   }  
  deleteAccount(id){   
